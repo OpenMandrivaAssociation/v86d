@@ -1,0 +1,36 @@
+--- v86d-0.1/v86.c.ark	2007-10-03 15:59:01.000000000 +0200
++++ v86d-0.1/v86.c	2007-10-03 16:00:26.000000000 +0200
+@@ -9,8 +9,16 @@
+ #include <sys/socket.h>
+ #include <sys/poll.h>
+ 
++#define fd_set kernel_fd_set
++#define dev_t kernel_dev_t
++#define ssize_t kernel_ssize_t
++#define clock_t kernel_clock_t
+ #include <linux/netlink.h>
+ #include <linux/rtnetlink.h>
++#undef fd_set
++#undef dev_t
++#undef ssize_t
++#undef clock_t
+ 
+ #include <arpa/inet.h>
+ 
+--- v86d/v86_common.c.ark	2010-06-17 17:15:42.507747292 +0200
++++ v86d/v86_common.c	2010-06-17 17:17:40.693811044 +0200
+@@ -1,6 +1,14 @@
+ #include <string.h>
+ #include "v86.h"
+ 
++size_t strnlen(const char *s, size_t maxlen) {
++	size_t i;
++	for(i=0; i<maxlen; i++)
++		if(*(s++)==0)
++			return i;
++	return maxlen;
++}
++
+ #define addr(t) (((t & 0xffff0000) >> 12) + (t & 0x0000ffff))
+ 
+ #define vbeib_get_string(name)					\
