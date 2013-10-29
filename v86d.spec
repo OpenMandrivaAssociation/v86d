@@ -1,6 +1,6 @@
 Name: v86d
 Version: 0.1.10
-Release: 1
+Release: 2
 Source0: %name-%version.tar.xz
 Patch0: v86d-dietlibc.patch
 Summary: Userspace helper for uvesafb
@@ -15,7 +15,7 @@ Userspace helper for uvesafb
 %prep
 %setup -q
 %apply_patches
-./configure --default
+./configure --with86emu
 sed -i -e "s|-Wall -g -O2|$RPM_OPT_FLAGS -Os|g" Makefile
 
 %build
