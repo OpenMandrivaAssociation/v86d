@@ -1,6 +1,6 @@
 Name: v86d
 Version: 0.1.10
-Release: 6
+Release: 7
 Source0: %name-%version.tar.xz
 Patch0: v86d-dietlibc.patch
 Summary: Userspace helper for uvesafb
