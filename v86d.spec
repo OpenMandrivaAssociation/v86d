@@ -1,3 +1,5 @@
+%define debug_package %{nil}
+
 Name: v86d
 Version: 0.1.10
 Release: 11
