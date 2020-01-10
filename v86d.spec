@@ -16,7 +16,7 @@ Userspace helper for uvesafb
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 ./configure --with-x86emu
 sed -i -e "s|-Wall -g -O2|$RPM_OPT_FLAGS -Os|g" Makefile
 
