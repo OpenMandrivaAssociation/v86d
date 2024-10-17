@@ -6,7 +6,7 @@ Release: 13
 Source0: %name-%version.tar.xz
 Patch0: v86d-dietlibc.patch
 Summary: Userspace helper for uvesafb
-URL: http://github.com/mjanusz/v86d
+URL: https://github.com/mjanusz/v86d
 License: GPL
 Group: System/Base
 BuildRequires: dietlibc
