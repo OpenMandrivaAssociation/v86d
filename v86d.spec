@@ -9,6 +9,11 @@ Summary: Userspace helper for uvesafb
 URL: https://github.com/mjanusz/v86d
 License: GPL
 Group: System/Base
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: dietlibc
 
 %description
